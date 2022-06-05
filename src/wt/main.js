@@ -8,7 +8,7 @@ export const performCalculations = async () => {
 
         newWorker.on('message', msg => {
             resultArray.push(msg);
-            if(count === 1) console.log(resultArray.sort((item1, item2) => {
+            if(count === 1) return(resultArray.sort((item1, item2) => {
                 if(item1['data'] === null ) return true;
                 if(item2['data'] === null) return false;
                 return item1.data - item2.data;
