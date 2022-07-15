@@ -1,3 +1,9 @@
+import fs from 'fs'
+
 export const list = async () => {
-    // Write your code here 
+    fs.readdir('files',(err, files) => {
+        if(err) throw 'Error: FS operation failed';
+        files.forEach((file) =>  console.log(file))
+    })
 };
+list();
